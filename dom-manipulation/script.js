@@ -9,6 +9,7 @@ let quotes = [
 const quoteDisplay = document.getElementById("quoteDisplay");
 const categorySelect = document.getElementById("categorySelect");
 const newQuoteBtn = document.getElementById("newQuote");
+const addQuoteBtn = document.getElementById("addQuoteBtn");
 
 // Populate initial categories
 function updateCategoryOptions() {
@@ -62,6 +63,7 @@ function addQuote() {
 // Event listeners
 newQuoteBtn.addEventListener("click", showRandomQuote);
 categorySelect.addEventListener("change", showRandomQuote);
+addQuoteBtn.addEventListener("click", addQuote);
 
 // Initial setup
 updateCategoryOptions();
