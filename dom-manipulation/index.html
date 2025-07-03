@@ -18,23 +18,17 @@
       background: #fff;
       border-left: 5px solid #007BFF;
     }
-    input {
+    input, select, button {
       margin: 0.5rem 0;
       padding: 0.5rem;
       width: 100%;
       box-sizing: border-box;
     }
     button {
-      padding: 0.5rem 1rem;
       background: #007BFF;
-      color: #fff;
+      color: white;
       border: none;
-      margin-top: 1rem;
       cursor: pointer;
-    }
-    select {
-      margin-top: 1rem;
-      padding: 0.5rem;
     }
   </style>
 </head>
@@ -52,10 +46,16 @@
   <div id="quoteDisplay">Click "Show New Quote" to begin.</div>
   <button id="newQuote">Show New Quote</button>
 
-  <!-- Dynamic Quote Form Will Be Injected Here -->
   <div id="quoteFormContainer"></div>
 
-  <!-- Script loaded with defer to ensure DOM is ready -->
+  <!-- Import / Export Section -->
+  <h2>Import / Export Quotes</h2>
+  <input type="file" id="importFile" accept=".json" />
+  <button onclick="exportToJsonFile()">Export Quotes as JSON</button>
+
   <script src="script.js" defer></script>
+  <script>
+    document.getElementById("importFile").addEventListener("change", importFromJsonFile);
+  </script>
 </body>
 </html>
